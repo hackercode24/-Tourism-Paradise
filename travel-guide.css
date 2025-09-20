@@ -1,0 +1,85 @@
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.guide-link-card {
+    display: flex;
+    align-items: flex-end;
+    height: 400px;
+    border-radius: var(--radius-lg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.guide-link-card:hover {
+    transform: scale(1.03);
+}
+
+.guide-link-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.guide-link-card__content {
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+}
+
+.guide-link-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    color: #1E90FF; /* DodgerBlue for guide card headings */
+}
+
+.guide-link-card p {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.guide-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    color: #ADD8E6; /* light blue text for improved visibility */
+}
+
+.guide-content h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+/* Hero title on travel-guide page */
+.hero__title {
+    color: #1E90FF;
+}
+
+.guide-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #ADD8E6; /* light blue subheadings for better visibility */
+}
+
+.guide-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.guide-content li {
+    margin-bottom: 0.5rem;
+}

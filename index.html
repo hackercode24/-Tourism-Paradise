@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism Paradise - Discover Amazing Destinations</title>
+    <meta name="description" content="Explore the world's most beautiful destinations with Tourism Paradise">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="logo">
+                    <span class="logo__icon">🌍</span>
+                    <span class="logo__text">Tourism Paradise</span>
+                </div>
+
+                <nav class="nav" id="nav">
+                    <ul class="nav__list">
+                        <li><a href="#" class="nav__link active" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav__link" data-page="destinations">Destinations</a></li>
+                        <li><a href="#" class="nav__link" data-page="about">About</a></li>
+                        <li><a href="#" class="nav__link" data-page="contact">Contact</a></li>
+                        <li><a href="travel-guide.html" class="nav__link">Travel Guide</a></li>
+                        <li><a href="#" class="nav__link" data-page="create-post">Create Post</a></li>
+                    </ul>
+                </nav>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="homePage" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero__overlay"></div>
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Discover Amazing Destinations</h1>
+                    <p class="hero__subtitle">Explore the world's most beautiful places and create unforgettable memories</p>
+
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search destinations..." class="search-input">
+                        <button class="search-btn" id="searchBtn">🔍</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats Section -->
+        <section class="quick-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card__number">100+</div>
+                        <div class="stat-card__label">Destinations</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number">50+</div>
+                        <div class="stat-card__label">Employees</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__number">10,000+</div>
+                        <div class="stat-card__label">Happy Customers</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Explore by Category</h2>
+                <div class="categories__grid" id="categoriesGrid">
+                    <!-- Categories populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Destinations -->
+        <section class="featured-destinations">
+            <div class="container">
+                <h2 class="section-title">Featured Destinations</h2>
+                <div class="destinations-preview" id="featuredDestinations">
+                    <!-- Featured destinations populated by JavaScript -->
+                </div>
+                <div class="text-center">
+                    <button class="btn btn--primary btn--lg" onclick="navigateToPage('destinations')">
+                        View All Destinations
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter__content">
+                    <h2 class="newsletter__title">Stay Updated</h2>
+                    <p class="newsletter__subtitle">Get the latest travel tips and destination guides delivered to your inbox</p>
+                    <form class="newsletter__form" id="newsletterForm">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email" class="newsletter__input" required>
+                        <button type="submit" class="btn btn--primary newsletter__btn">
+                            <span class="btn-text">Subscribe</span>
+                            <span class="btn-loading hidden">Subscribing...</span>
+                        </button>
+                    </form>
+                    <p class="auth-required-message hidden">Please log in to subscribe to our newsletter</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- Destinations Page -->
+    <div id="destinationsPage" class="page">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">All Destinations</h1>
+                <p class="page-subtitle">Discover amazing places around the world</p>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters">
+            <div class="container">
+                <div class="filters__content">
+                    <div class="filter-group">
+                        <label for="categoryFilter">Filter by Category:</label>
+                        <select id="categoryFilter" class="form-control">
+                            <option value="">All Categories</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="regionFilter">Filter by Region:</label>
+                        <select id="regionFilter" class="form-control">
+                            <option value="">All Regions</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Americas">Americas</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="destinations-content">
+            <div class="container">
+                <div class="destinations__grid" id="destinationsGrid">
+                    <!-- Destinations populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="aboutPage" class="page">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">About Tourism Paradise</h1>
+                <p class="page-subtitle">Your trusted partner for unforgettable travel experiences</p>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>Our Mission</h2>
+                        <p>To make world-class travel experiences accessible to everyone. We believe that travel enriches lives, broadens perspectives, and creates lasting memories.</p>
+
+                        <h3>Why Choose Us?</h3>
+                        <ul class="feature-list">
+                            <li>✓ Carefully curated destinations</li>
+                            <li>✓ Expert travel guidance</li>
+                            <li>✓ 24/7 customer support</li>
+                            <li>✓ Best price guarantee</li>
+                            <li>✓ Sustainable tourism practices</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-stats">
+                        <h3>Our Achievements</h3>
+                        <div class="stat-boxes">
+                            <div class="stat-box">
+                                <div class="stat-box__number">2020</div>
+                                <div class="stat-box__label">Founded</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-box__number">50+</div>
+                                <div class="stat-box__label">Team Members</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-box__number">100+</div>
+                                <div class="stat-box__label">Destinations</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-box__number">10,000+</div>
+                                <div class="stat-box__label">Happy Customers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-section">
+                    <h2 class="section-title">Our Values</h2>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-card__icon">🌟</div>
+                            <h4>Excellence</h4>
+                            <p>We strive for excellence in every aspect of our service, ensuring memorable experiences.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-card__icon">🤝</div>
+                            <h4>Trust</h4>
+                            <p>Building long-lasting relationships through transparency and reliability.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-card__icon">🌍</div>
+                            <h4>Sustainability</h4>
+                            <p>Promoting responsible tourism that benefits local communities and preserves nature.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contactPage" class="page">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Contact Us</h1>
+                <p class="page-subtitle">Get in touch with our travel experts</p>
+            </div>
+        </section>
+
+        <section class="contact-content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p>Have questions about your next adventure? We're here to help you plan the perfect trip.</p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p>info@tourismparadise.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div class="contact-text">
+                                    <h4>Phone</h4>
+                                    <p>+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <div class="contact-text">
+                                    <h4>Address</h4>
+                                    <p>123 Travel Street<br>Adventure City, AC 12345</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">🕒</div>
+                                <div class="contact-text">
+                                    <h4>Business Hours</h4>
+                                    <p>Mon-Fri: 9AM-6PM<br>Sat-Sun: 10AM-4PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contactForm">
+                            <h3>Send us a Message</h3>
+                            <div class="form-group">
+                                <label for="contactName" class="form-label">Name</label>
+                                <input type="text" id="contactName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail" class="form-label">Email</label>
+                                <input type="email" id="contactEmail" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading hidden">Sending...</span>
+                            </button>
+                            <p class="auth-required-message hidden">Please log in to send us a message</p>
+                        </form>
+
+                        <!-- FAQ Section -->
+                        <div class="faq-section">
+                            <h3>Frequently Asked Questions</h3>
+                            <div class="faq-list">
+                                <div class="faq-item">
+                                    <h4>How do I book a destination?</h4>
+                                    <p>Simply browse our destinations, click on your preferred location, and follow the booking instructions.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <h4>What's included in the travel packages?</h4>
+                                    <p>Our packages typically include accommodation, guided tours, and local transportation. Specific inclusions vary by destination.</p>
+                                </div>
+                                <div class="faq-item">
+                                    <h4>Can I customize my travel itinerary?</h4>
+                                    <p>Yes! We offer customizable itineraries to match your preferences and budget. Contact our travel experts for personalized planning.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Create Post Page -->
+    <div id="create-postPage" class="page">
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Create a New Post</h1>
+                <p class="page-subtitle">Share your travel experiences with the community</p>
+            </div>
+        </section>
+
+        <section class="create-post-content">
+            <div class="container">
+                <form id="createPostForm" class="form">
+                    <div class="form-group">
+                        <label for="postTitle" class="form-label">Title</label>
+                        <input type="text" id="postTitle" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postImageUrl" class="form-label"> URL</label>
+                        <input type="url" id="postImageUrl" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postDescription" class="form-label">Description</label>
+                        <textarea id="postDescription" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Submit Post</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Login Page -->
+    <div id="loginPage" class="page">
+        <section class="login-content">
+            <div class="container">
+                <div class="auth-container">
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" data-tab="login">Login</button>
+                        <button class="auth-tab" data-tab="register">Register</button>
+                    </div>
+
+                    <div id="loginTab" class="auth-form-container active">
+                        <form id="loginForm" class="auth-form">
+                            <h2>Welcome Back</h2>
+                            <p>Sign in to your account to access exclusive features</p>
+
+                            <div class="form-group">
+                                <label for="loginEmail" class="form-label">Email</label>
+                                <input type="email" id="loginEmail" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" id="loginPassword" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width">
+                                <span class="btn-text">Login</span>
+                                <span class="btn-loading hidden">Logging in...</span>
+                            </button>
+
+                            <div class="auth-links">
+                                <a href="#" class="forgot-password">Forgot Password?</a>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="registerTab" class="auth-form-container">
+                        <form id="registerForm" class="auth-form">
+                            <h2>Create Account</h2>
+                            <p>Join us to discover amazing destinations</p>
+
+                            <div class="form-group">
+                                <label for="registerName" class="form-label">Full Name</label>
+                                <input type="text" id="registerName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerEmail" class="form-label">Email</label>
+                                <input type="email" id="registerEmail" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword" class="form-label">Password</label>
+                                <input type="password" id="registerPassword" class="form-control" required minlength="6">
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width">
+                                <span class="btn-text">Create Account</span>
+                                <span class="btn-loading hidden">Creating account...</span>
+                            </button>
+
+                            <div class="auth-links">
+                                <p>By creating an account, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="logo">
+                        <span class="logo__icon">🌍</span>
+                        <span class="logo__text">Tourism Paradise</span>
+                    </div>
+                    <p class="footer__desc">Discover the world's most amazing destinations with us.</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank">Facebook</a>
+                        <a href="#" target="_blank">Instagram</a>
+                        <a href="#" target="_blank">Twitter</a>
+                        <a href="#" target="_blank">YouTube</a>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="#" data-page="home">Home</a></li>
+                        <li><a href="#" data-page="destinations">Destinations</a></li>
+                        <li><a href="#" data-page="about">About</a></li>
+                        <li><a href="#" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p>📧 info@tourismparadise.com</p>
+                        <p>📞 +1 (555) 123-4567</p>
+                        <p>📍 123 Travel Street, Adventure City</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Tourism Paradise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner hidden">
+        <div class="spinner"></div>
+        <p>Loading destinations...</p>
+    </div>
+
+    <!-- Destination Detail Modal -->
+    <div id="destinationModal" class="modal hidden">
+        <div class="modal__overlay" id="modalOverlay"></div>
+        <div class="modal__content">
+            <button class="modal__close" id="modalClose">&times;</button>
+            <div class="modal__body" id="modalBody">
+                <!-- Modal content populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
